@@ -1,0 +1,11 @@
+inherited fprincipal: Tfprincipal
+  ClientHeight = 695
+  ClientWidth = 450
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  inherited MapView1: TMapView
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    Zoom = 12.000000000000000000
+  end
+end

@@ -1,0 +1,62 @@
+object fprincipal: Tfprincipal
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 537
+  ClientWidth = 440
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object MapView1: TMapView
+    Align = Client
+    Size.Width = 440.000000000000000000
+    Size.Height = 437.000000000000000000
+    Size.PlatformDefault = False
+    Zoom = 12.000000000000000000
+  end
+  object panel_top: TPanel
+    Align = Top
+    Size.Width = 440.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Lineas: TComboBox
+      Items.Strings = (
+        'Linea 1'
+        'Linea 2')
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Align = Bottom
+    Position.Y = 487.000000000000000000
+    Size.Width = 440.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object btinicio: TSpeedButton
+      Align = Left
+      Position.Y = 1.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Partida'
+    end
+    object btllegada: TSpeedButton
+      Align = Left
+      Position.X = 121.000000000000000000
+      Position.Y = 1.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Destino'
+    end
+  end
+end

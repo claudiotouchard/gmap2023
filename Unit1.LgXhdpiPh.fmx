@@ -1,0 +1,17 @@
+inherited fprincipal_LgXhdpiPh: Tfprincipal_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited MapView1: TMapView
+    Size.Width = 450.000000000000000000
+    Size.Height = 595.000000000000000000
+    Zoom = 0.000000000000000000
+  end
+  inherited panel_top: TPanel
+    Size.Width = 450.000000000000000000
+  end
+  inherited Panel2: TPanel
+    Position.Y = 645.000000000000000000
+    Size.Width = 450.000000000000000000
+  end
+end

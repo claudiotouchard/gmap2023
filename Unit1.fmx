@@ -1,0 +1,98 @@
+object fprincipal: Tfprincipal
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 485
+  ClientWidth = 440
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object MapView1: TMapView
+    Align = Client
+    Size.Width = 440.000000000000000000
+    Size.Height = 385.000000000000000000
+    Size.PlatformDefault = False
+    Zoom = 12.000000000000000000
+  end
+  object panel_top: TPanel
+    Align = Top
+    Size.Width = 440.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Lineas: TComboBox
+      Items.Strings = (
+        'Linea 1'
+        'Linea 2')
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Align = Bottom
+    Position.Y = 435.000000000000000000
+    Size.Width = 440.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object btinicio: TSpeedButton
+      Align = Left
+      Images = ImageList1
+      ImageIndex = 0
+      Position.Y = 1.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Partida'
+      OnClick = btinicioClick
+    end
+    object btllegada: TSpeedButton
+      Align = Left
+      Position.X = 121.000000000000000000
+      Position.Y = 1.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Destino'
+    end
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap = <
+          item
+            Width = 16
+            Height = 16
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+              61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00C349444154384F6300817F0C0C35DF19183E02690BB00012F8CFC0C00414B7
+              FBCBC030F90F03C36920BE0864CF068A2B419530300005A60305FEFF6660B80B
+              549C0364DB00692FA0783B480C24878E417AA0DA11069082610630814DA0008C
+              1A404F0380D1760198366600F10420FB0454180260E900486F06A6C8F7B0B806
+              26A2DB40B166A02615A8523800CA4B40990803800A7D80341B4803108B41A5F1
+              020C2F303230FC020ADE01E2575021BC807E81880BC00CF8F38381018840399B
+              14C0C00000995968457E7F70750000000049454E44AE426082}
+            FileName = 
+              'C:\Users\Claudio\Documents\Embarcadero\Studio\Projects\gmap2023\' +
+              'archivos\flag-16.png'
+          end>
+        Name = 'BanderaRoja'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'BanderaRoja'
+          end>
+      end>
+    Left = 352
+    Top = 56
+  end
+end
