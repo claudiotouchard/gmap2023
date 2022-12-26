@@ -1,0 +1,39 @@
+inherited fprincipal_LgXhdpiPh: Tfprincipal_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited MapView1: TMapView
+    Size.Width = 450.000000000000000000
+    Size.Height = 595.000000000000000000
+    Zoom = 0.000000000000000000
+    inherited imgbanderaroja: TImage
+      MultiResBitmap.Height = 16
+      MultiResBitmap.Width = 16
+      MultiResBitmap = <
+        item
+          Width = 16
+          Height = 16
+          PNG = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            00B949444154384F6300817F0C0C357F19183E02690BB00012F8CFC0C00414B7
+            03CA4F06E2D3407C11886703C595A04A18188002D38102FF81F45DA0E21C20DB
+            06487B01F9ED2031901C3A06E9816A4718400A8619C004368102306A003D0D00
+            A68B0B403C03882700F109A83004C0D20190DE0CC4EF91E2FA3610370335A840
+            95C201505E02CA44180054E803A4D9401A80580C2A8D176078819181E11750F0
+            0E10BF820AE105F40B445C0066C01FA09F7F006920450A60600000D835686119
+            0743950000000049454E44AE426082}
+          FileName = 
+            'C:\Users\Claudio\Documents\Embarcadero\Studio\Projects\gmap2023\' +
+            'archivos\flag-16.png'
+        end>
+    end
+  end
+  inherited panel_top: TPanel
+    Size.Width = 450.000000000000000000
+  end
+  inherited Panel2: TPanel
+    Position.Y = 645.000000000000000000
+    Size.Width = 450.000000000000000000
+  end
+end

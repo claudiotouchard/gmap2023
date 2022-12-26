@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Maps,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, System.ImageList,
-  FMX.ImgList, System.Generics.Collections;
+  FMX.ImgList, System.Generics.Collections, FMX.Objects;
 
 type
   Tfprincipal = class(TForm)
@@ -15,18 +15,24 @@ type
     Panel2: TPanel;
     btinicio: TSpeedButton;
     btllegada: TSpeedButton;
-    Lineas: TComboBox;
+    cmbLineas: TComboBox;
     ImageList1: TImageList;
+    imgbanderaroja: TImage;
+    btCalcularRuta: TSpeedButton;
+    SpeedButton1: TSpeedButton;
     procedure FormShow(Sender: TObject);
     procedure btinicioClick(Sender: TObject);
+    procedure btllegadaClick(Sender: TObject);
   private
     { Private declarations }
     procedure agregarMarcadorPartida;
+    procedure agregarMarcadorLlegada;
   public
     { Public declarations }
 
     posicion : TMapCoordinate;
     MarcadorI, MarcadorF : TMapMarkerDescriptor;
+    MarcadorISW, MarcadorFSW: Boolean;
     Marcadores : TList<TMapMarker>;
 
 
@@ -40,31 +46,70 @@ implementation
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
+procedure Tfprincipal.agregarMarcadorLlegada;
+var
+  s : TSizeF;
+  pos: TMapCoordinate;
+
+begin
+  s := TSizeF.Create(128, 128);            //Image size
+  pos.Latitude := mapview1.Location.Latitude;
+  pos.Longitude := mapview1.Location.Longitude;
+
+  MarcadorI := TMapMarkerDescriptor.Create(pos , 'Partida');
+
+  MarcadorI.Icon := imagelist1.Bitmap(s, 0);
+  MarcadorI.Draggable := True;
+  MarcadorI.Visible :=True;
+
+  MapView1.Zoom:= 16;
+  //MapView1.AddMarker(MarcadorI);
+  Marcadores.Add(MapView1.AddMarker(MarcadorI));
+end;
+
 procedure Tfprincipal.agregarMarcadorPartida;
 var
   s : TSizeF;
   pos: TMapCoordinate;
+
 begin
-  s := TSizeF.Create(16, 16);            //Image size
+  s := TSizeF.Create(128, 128);            //Image size
   pos.Latitude := mapview1.Location.Latitude;
   pos.Longitude := mapview1.Location.Longitude;
-  MarcadorI.Icon := ImageList1.Source.Items[0].MultiResBitmap.Items[0].Bitmap;
+
   MarcadorI := TMapMarkerDescriptor.Create(pos , 'Partida');
+
+  MarcadorI.Icon := imagelist1.Bitmap(s, 1);
   MarcadorI.Draggable := True;
   MarcadorI.Visible :=True;
+
+  MapView1.Zoom:= 16;
+  //MapView1.AddMarker(MarcadorI);
   Marcadores.Add(MapView1.AddMarker(MarcadorI));
+
 
 end;
 
 procedure Tfprincipal.btinicioClick(Sender: TObject);
 begin
  // Agregar el Marcador Inicial
- agregarMarcadorPartida;
+  agregarMarcadorPartida;
+  btllegada.Enabled:= true;
+  btinicio.Enabled:= false;
 
+end;
+
+procedure Tfprincipal.btllegadaClick(Sender: TObject);
+begin
+  agregarMarcadorLlegada;
+  btllegada.Enabled:= false;
 end;
 
 procedure Tfprincipal.FormShow(Sender: TObject);
 begin
+  MarcadorISW:= False;
+  MarcadorFSW:= False;
+  Marcadores := TList<TMapMarker>.Create;
   posicion.Latitude := -17.7817958;
   posicion.Longitude := -63.1716228;
   MapView1.Location := posicion;

@@ -6,6 +6,28 @@ inherited fprincipal_LgXhdpiPh: Tfprincipal_LgXhdpiPh
     Size.Width = 450.000000000000000000
     Size.Height = 595.000000000000000000
     Zoom = 0.000000000000000000
+    inherited imgbanderaroja: TImage
+      MultiResBitmap.Height = 16
+      MultiResBitmap.Width = 16
+      MultiResBitmap = <
+        item
+          Width = 16
+          Height = 16
+          PNG = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            00C049444154384F6300817F0C0C357F18183E02690BB00012F8CFC0C00414B7
+            FBCBC03019A8E634105F04B26703C595A04A18188002D38102FF819277818A73
+            806C1B20ED05146F078981E4D031480F543BC2005230CC0026B00914805103E8
+            690030DA2E00D3C60C209E00649F800A43002C1D00E9CDC084F31E16D740F66D
+            A0583350930A54291C00E525A04C840140853E409A0DA40188C5A0D278018617
+            1819187E0105EF00F12BA8105E40BF40C4056006FC0186C30F200DF43A298081
+            0100BEB668579E546A560000000049454E44AE426082}
+          FileName = 
+            'C:\Users\Claudio\Documents\Embarcadero\Studio\Projects\gmap2023\' +
+            'archivos\flag-16.png'
+        end>
+    end
   end
   inherited panel_top: TPanel
     Size.Width = 450.000000000000000000
@@ -13,5 +35,8 @@ inherited fprincipal_LgXhdpiPh: Tfprincipal_LgXhdpiPh
   inherited Panel2: TPanel
     Position.Y = 645.000000000000000000
     Size.Width = 450.000000000000000000
+    inherited btCalcularRuta: TSpeedButton
+      Position.X = 310.000000000000000000
+    end
   end
 end
